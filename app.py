@@ -50,4 +50,4 @@ def generate_pdf():
     return send_file(output, as_attachment=True, download_name="conop.pdf", mimetype="application/pdf")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=10000, debug=True)
