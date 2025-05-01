@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CONOP Generator</title>
+</head>
+<body>
+  <h1>Create Your Custom CONOP</h1>
+  <form action="/generate" method="POST">
+    <h2>Objectives</h2>
+    <h2>Choose PDF Aspect Ratio</h2>
+<fieldset>
+  <label><input type="radio" name="aspectRatio" value="4:3" checked> 4:3</label><br>
+  <label><input type="radio" name="aspectRatio" value="16:9"> 16:9</label><br>
+</fieldset>
+    <label><input type="checkbox" name="Objectives" value="Secure Area"> Secure Area</label><br>
+    <label><input type="checkbox" name="Objectives" value="Establish Communications"> Establish Communications</label><br>
+    <label><input type="checkbox" name="Objectives" value="Evacuate Personnel"> Evacuate Personnel</label><br>
+
+    <h2>Units Involved</h2>
+    <label><input type="checkbox" name="Units" value="Team Alpha"> Team Alpha</label><br>
+    <label><input type="checkbox" name="Units" value="Bravo Squad"> Bravo Squad</label><br>
+
+    <h2>Operation Details</h2>
+    <label>Operation Name: <input type="text" name="OperationName"></label><br>
+    <label>Location: <input type="text" name="Location"></label><br>
+
+    <br><button type="submit">Generate PDF</button>
+  </form>
+</body>
+</html>
