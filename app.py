@@ -1,4 +1,4 @@
-# app.py (Updated for New Template - CONOP Generator)
+# app.py (Updated for latest Template - April 2025 Version)
 
 from flask import Flask, request, render_template, send_file
 from PyPDF2 import PdfReader, PdfWriter
@@ -16,30 +16,30 @@ def home():
 def generate_pdf():
     form_data = request.form
 
-    reader = PdfReader("CONVENTION CONOP TEMPLATE 4 24 with data.pdf")
+    reader = PdfReader("CONVENTION CONOP TEMPLATE 4 24 with data.pdf.pdf")
     writer = PdfWriter()
     writer.append(reader)
 
-    # Fill out fields matching new template's exact field names
+    # Updated field names to match April 2025 template
     writer.update_page_form_field_values(writer.pages[0], {
-        "convention_name": form_data.get("convention_name", ""),
-        "activity_description": form_data.get("activity_description", ""),
+        "confrence_name": form_data.get("confrence_name", ""),
+        "ACTIVITY DESCRIPTIONRow1": form_data.get("activity_description", ""),
         "who": form_data.get("who", ""),
         "what": form_data.get("what", ""),
         "when": form_data.get("when", ""),
         "where": form_data.get("where", ""),
-        "cost": form_data.get("cost", ""),
+        "POC": form_data.get("POC", ""),
         "asset": form_data.get("asset", ""),
         "tair": form_data.get("tair", ""),
-        "mac": form_data.get("mac", ""),
-        "ppi": form_data.get("ppi", ""),
-        "impressions": form_data.get("impressions", ""),
-        "engagements": form_data.get("engagements", ""),
-        "leads": form_data.get("leads", ""),
-        "cois": form_data.get("cois", "")
+        "MAC": form_data.get("mac", ""),
+        "PPI": form_data.get("ppi", ""),
+        "IMPRESSIONS": form_data.get("impressions", ""),
+        "ENGAGEMENTS": form_data.get("engagements", ""),
+        "LEADS": form_data.get("leads", ""),
+        "COIs": form_data.get("COIs", "")
     })
 
-    # Force field appearances to render properly
+    # Force appearance rendering
     writer._root_object.update({
         NameObject("/NeedAppearances"): NameObject("true")
     })
