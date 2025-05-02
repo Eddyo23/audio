@@ -53,3 +53,8 @@ def generate_pdf():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=10000, debug=True)
+
+
+@app.route("/convention")
+def convention():
+    return render_template("convention.html")
