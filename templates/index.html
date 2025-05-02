@@ -1,79 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PDF Form Generator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONOP Landing Page</title>
   <style>
     body {
       font-family: sans-serif;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
       background-color: #f2f2f2;
     }
-    h1 {
+    .container {
       text-align: center;
-      color: #FFCC00;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    h1 {
+      margin-bottom: 2rem;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
       max-width: 600px;
       margin: auto;
-      background-color: white;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    label {
-      font-weight: bold;
-      margin-bottom: 4px;
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: black;
     }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-    input, textarea, select {
-      padding: 8px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    button {
-      padding: 12px;
-      font-size: 16px;
-      margin-top: 20px;
-      cursor: pointer;
+    .card:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <h1>CONVENTION CONOP</h1>
-  <form action="/generate" method="POST">
-    <div class="form-group">
-      <label for="confrence_name">Conference Name</label>
-      <input type="text" name="confrence_name" id="confrence_name">
+  <div class="container">
+    <h1>Army Bands Recruiting CONOP Generator</h1>
+    <div class="options">
+      <a href="convention.html" class="card">Convention</a>
+      <a href="#" class="card">Tour</a>
+      <a href="#" class="card">After Action Review</a>
     </div>
-    <div class="form-group">
-      <label for="activity_description">Activity Description</label>
-      <textarea name="activity_description" id="activity_description"></textarea>
-    </div>
-    <div class="form-group"><label for="who">Who</label><input type="text" name="who" id="who"></div>
-    <div class="form-group"><label for="what">What</label><input type="text" name="what" id="what"></div>
-    <div class="form-group"><label for="when">When</label><input type="text" name="when" id="when"></div>
-    <div class="form-group"><label for="where">Where</label><input type="text" name="where" id="where"></div>
-    <div class="form-group"><label for="POC">POC</label><input type="text" name="POC" id="POC"></div>
-    <div class="form-group"><label for="asset">Asset</label><input type="text" name="asset" id="asset"></div>
-    <div class="form-group"><label for="tair">TAIR</label><input type="text" name="tair" id="tair"></div>
-    <div class="form-group"><label for="mac">MAC</label><input type="text" name="mac" id="mac"></div>
-    <div class="form-group"><label for="ppi">PPI</label><input type="text" name="ppi" id="ppi"></div>
-    <div class="form-group"><label for="impressions">IMPRESSIONS</label><input type="text" name="impressions" id="impressions"></div>
-    <div class="form-group"><label for="engagements">ENGAGEMENTS</label><input type="text" name="engagements" id="engagements"></div>
-    <div class="form-group"><label for="leads">LEADS</label><input type="text" name="leads" id="leads"></div>
-    <div class="form-group"><label for="COIs">COIs</label><input type="text" name="COIs" id="COIs"></div>
-    <button type="submit">Generate PDF</button>
-  </form>
+  </div>
 </body>
 </html>
