@@ -38,7 +38,7 @@ def generate_pdf():
             "impressions": form_data.get("impressions", ""),
             "engagements": form_data.get("engagements", ""),
             "leads": form_data.get("leads", ""),
-            "coi": form_data.get("coi", ""),
+            "cois": form_data.get("cois", ""),
             "activity_name": form_data.get("activity_name", ""),
             "personell": form_data.get("personell", ""),
             "uniform": form_data.get("uniform", ""),
