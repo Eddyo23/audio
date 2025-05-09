@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USAREC AAR</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      color: #660000;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    input, textarea {
+      padding: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    button {
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>USAREC AAR Submission</h1>
+  <form action="/generate-aar" method="POST">
+    <div class="form-group"><label>Event Title</label><input type="text" name="event_title"></div>
+    <div class="form-group"><label>Event MAC</label><input type="text" name="event_mac"></div>
+    <div class="form-group"><label>Actual Cost</label><input type="text" name="actual_cost"></div>
+    <div class="form-group"><label>Who was the mission commander?</label><input type="text" name="mission_commander"></div>
+    <div class="form-group"><label>Misssion commander's email</label><input type="email" name="pmc_email"></div>
+    <div class="form-group"><label>Mission commander's phone</label><input type="text" name="pmc_phone"></div>
+
+    <div class="form-group"><label>PPI Item 1</label><input type="text" name="item1"></div>
+    <div class="form-group"><label>Qty 1</label><input type="text" name="qty1"></div>
+    <div class="form-group"><label>PPI Item 2</label><input type="text" name="item2"></div>
+    <div class="form-group"><label>Qty 2</label><input type="text" name="qty2"></div>
+    <div class="form-group"><label>PPI Item 3</label><input type="text" name="item3"></div>
+    <div class="form-group"><label>Qty 3</label><input type="text" name="qty3"></div>
+    <div class="form-group"><label>PPI Item 4</label><input type="text" name="item4"></div>
+    <div class="form-group"><label>PPI Qty 4</label><input type="text" name="qty4"></div>
+    <div class="form-group"><label>PPI Item 5</label><input type="text" name="item5"></div>
+    <div class="form-group"><label>Qty 5</label><input type="text" name="qty5"></div>
+    <div class="form-group"><label>PPI Item 6</label><input type="text" name="item6"></div>
+    <div class="form-group"><label>Qty 6</label><input type="text" name="qty6"></div>
+
+    <div class="form-group"><label>TAIR Unit</label><input type="text" name="tair_unit"></div>
+    <div class="form-group"><label>TAIR Asset</label><input type="text" name="tair_asset"></div>
+    <div class="form-group"><label>Impressions</label><input type="text" name="impressions"></div>
+    <div class="form-group"><label>COIs</label><input type="text" name="cois"></div>
+    <div class="form-group"><label>Prospects</label><input type="text" name="prospects"></div>
+    <div class="form-group"><label>VIPs</label><input type="text" name="vips"></div>
+    <div class="form-group"><label>How many USARD recruiters were there?</label><input type="text" name="recruiters"></div>
+    <div class="form-group"><label>Were there any ROTC recruiters there?</label><input type="text" name="rotc"></div>
+    <div class="form-group"><label>Should USARD support again?</label><textarea name="again"></textarea></div>
+    <div class="form-group"><label>Where was the display location?</label><input type="text" name="display_location"></div>
+    <div class="form-group"><label>Describe the event.</label><textarea name="description"></textarea></div>
+    <div class="form-group"><label>What were the challenges?</label><textarea name="challenges"></textarea></div>
+    <div class="form-group"><label>What went well?</label><textarea name="well"></textarea></div>
+    <div class="form-group"><label>Provide sugestions for improvement.</label><textarea name="improvement"></textarea></div>
+    <div class="form-group"><label>Reviewer name</label><input type="text" name="reviewer"></div>
+
+    <button type="submit">Download AAR PDF</button>
+  </form>
+</body>
+</html>

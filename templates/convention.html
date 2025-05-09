@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PDF Form Generator</title>
+  <title>CONVENTION CONOP</title>
   <style>
     body {
       font-family: sans-serif;
@@ -32,7 +32,7 @@
       display: flex;
       flex-direction: column;
     }
-    input, textarea, select {
+    input, textarea {
       padding: 8px;
       font-size: 14px;
       box-sizing: border-box;
@@ -53,26 +53,77 @@
   <h1>CONVENTION CONOP</h1>
   <form action="/generate" method="POST">
     <div class="form-group">
-      <label for="confrence_name">Conference Name</label>
-      <input type="text" name="confrence_name" id="confrence_name">
+      <label for="activity_name">Activity Name</label>
+      <input type="text" name="activity_name" id="activity_name">
     </div>
     <div class="form-group">
       <label for="activity_description">Activity Description</label>
       <textarea name="activity_description" id="activity_description"></textarea>
     </div>
-    <div class="form-group"><label for="who">Who</label><input type="text" name="who" id="who"></div>
-    <div class="form-group"><label for="what">What</label><input type="text" name="what" id="what"></div>
-    <div class="form-group"><label for="when">When</label><input type="text" name="when" id="when"></div>
-    <div class="form-group"><label for="where">Where</label><input type="text" name="where" id="where"></div>
-    <div class="form-group"><label for="POC">POC</label><input type="text" name="POC" id="POC"></div>
-    <div class="form-group"><label for="asset">Asset</label><input type="text" name="asset" id="asset"></div>
-    <div class="form-group"><label for="tair">TAIR</label><input type="text" name="tair" id="tair"></div>
-    <div class="form-group"><label for="mac">MAC</label><input type="text" name="mac" id="mac"></div>
-    <div class="form-group"><label for="ppi">PPI</label><input type="text" name="ppi" id="ppi"></div>
-    <div class="form-group"><label for="impressions">IMPRESSIONS</label><input type="text" name="impressions" id="impressions"></div>
-    <div class="form-group"><label for="engagements">ENGAGEMENTS</label><input type="text" name="engagements" id="engagements"></div>
-    <div class="form-group"><label for="leads">LEADS</label><input type="text" name="leads" id="leads"></div>
-    <div class="form-group"><label for="COIs">COIs</label><input type="text" name="COIs" id="COIs"></div>
+    <div class="form-group">
+      <label for="who">Who</label>
+      <input type="text" name="who" id="who">
+    </div>
+    <div class="form-group">
+      <label for="what">What</label>
+      <input type="text" name="what" id="what">
+    </div>
+    <div class="form-group">
+      <label for="when">When</label>
+      <input type="text" name="when" id="when">
+    </div>
+    <div class="form-group">
+      <label for="where">Where</label>
+      <input type="text" name="where" id="where">
+    </div>
+    <div class="form-group">
+      <label for="poc">POC</label>
+      <input type="text" name="poc" id="poc">
+    </div>
+    <div class="form-group">
+      <label for="leads">LEADS</label>
+      <input type="text" name="leads" id="leads">
+    </div>
+    <div class="form-group">
+      <label for="engagements">ENGAGEMENTS</label>
+      <input type="text" name="engagements" id="engagements">
+    </div>
+    <div class="form-group">
+      <label for="impressions">IMPRESSIONS</label>
+      <input type="text" name="impressions" id="impressions">
+    </div>
+    <div class="form-group">
+      <label for="mac">MAC</label>
+      <input type="text" name="mac" id="mac">
+    </div>
+    <div class="form-group">
+      <label for="tair">TAIR</label>
+      <input type="text" name="tair" id="tair">
+    </div>
+    <div class="form-group">
+      <label for="asset">ASSET</label>
+      <input type="text" name="asset" id="asset">
+    </div>
+    <div class="form-group">
+      <label for="coi">COI</label>
+      <input type="text" name="coi" id="coi">
+    </div>
+    <div class="form-group">
+      <label for="personell">Personnel</label>
+      <input type="text" name="personell" id="personell">
+    </div>
+    <div class="form-group">
+      <label for="uniform">Uniform</label>
+      <input type="text" name="uniform" id="uniform">
+    </div>
+    <div class="form-group">
+      <label for="hotel">Hotel</label>
+      <input type="text" name="hotel" id="hotel">
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes"></textarea>
+    </div>
     <button type="submit">Generate PDF</button>
   </form>
 </body>
