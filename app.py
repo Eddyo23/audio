@@ -51,6 +51,61 @@ def generate_pdf():
     output.seek(0)
     return send_file(output, download_name="filled_template.pdf", as_attachment=True)
 
+# Tour CONOP
+@app.route('/tourconop')
+def tourCONOP():
+    return render_template('tourconop.html')
+
+@app.route('/generate-tour', methods=['POST'])
+def generate_tour_pdf():
+    form_data = request.form
+    reader = PdfReader("TourCONOP.pdf")
+    writer = PdfWriter()
+
+    for page in reader.pages:
+        writer.add_page(page)
+
+    for page in writer.pages:
+        writer.update_page_form_field_values(page, {
+            "activity_description": form_data.get("activity_description", ""),
+            "who": form_data.get("who", ""),
+            "what": form_data.get("what", ""),
+            "when": form_data.get("when", ""),
+            "where": form_data.get("where", ""),
+            "poc": form_data.get("poc", ""),
+            "bn_poc": form_data.get("bn_poc", ""),
+            "asset": form_data.get("asset", ""),
+            
+            "mac": form_data.get("mac", ""),
+            "impressions": form_data.get("impressions", ""),
+            "engagements": form_data.get("engagements", ""),
+            "leads": form_data.get("leads", ""),
+            "cois": form_data.get("cois", ""),
+            "school1": form_data.get("school1", ""),
+            "school2": form_data.get("school2", ""),
+            "school3": form_data.get("school3", ""),
+            "school4": form_data.get("school4", ""),
+            "school5": form_data.get("school5", ""),
+            "school6": form_data.get("school6", ""),
+            "school7": form_data.get("school7", ""),
+            "school8": form_data.get("school8", ""),
+            "school9": form_data.get("school9", ""),
+            "school10": form_data.get("school10", ""),
+            "tour_name": form_data.get("tour_name", ""),
+            "personell": form_data.get("personell", ""),
+            "uniforms": form_data.get("uniforms", ""),
+            "hotel1": form_data.get("hotel1", ""),
+            "hotel2": form_data.get("hotel2", ""),
+            "hotel3": form_data.get("hotel3", ""),
+            "hotel4": form_data.get("hotel4", ""),
+        })
+
+    output = io.BytesIO()
+    writer.write(output)
+    output.seek(0)
+    return send_file(output, download_name="filled_template.pdf", as_attachment=True)
+
+
 # After Action Review form
 @app.route('/usarec-aar')
 def show_usarec_form():

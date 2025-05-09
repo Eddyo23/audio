@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TOUR CONOP</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      color: #FFCC00;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>TOUR CONOP</h1>
+  <form action="/generate-tour" method="POST">
+    <div class="form-group">
+      <label for="tour_name">Tour Name</label>
+      <input type="text" name="tour_name" id="tour_name">
+    </div>
+    <div class="form-group">
+      <label for="activity_description">Activity Description</label>
+      <textarea name="activity_description" id="activity_description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="who">Who</label>
+      <input type="text" name="who" id="who">
+    </div>
+    <div class="form-group">
+      <label for="what">What</label>
+      <input type="text" name="what" id="what">
+    </div>
+    <div class="form-group">
+      <label for="when">When</label>
+      <input type="text" name="when" id="when">
+    </div>
+    <div class="form-group">
+      <label for="where">Where</label>
+      <input type="text" name="where" id="where">
+    </div>
+    <div class="form-group">
+      <label for="poc">POC</label>
+      <input type="text" name="poc" id="poc">
+    </div>
+    <div class="form-group">
+        <label for="bn_poc">BN POC</label>
+        <input type="text" name="bn_poc" id="bn_poc">
+      </div>
+    <div class="form-group">
+      <label for="leads">LEADS</label>
+      <input type="text" name="leads" id="leads">
+    </div>
+    <div class="form-group">
+      <label for="engagements">ENGAGEMENTS</label>
+      <input type="text" name="engagements" id="engagements">
+    </div>
+    <div class="form-group">
+      <label for="impressions">IMPRESSIONS</label>
+      <input type="text" name="impressions" id="impressions">
+    </div>
+    <div class="form-group">
+      <label for="mac">MAC</label>
+      <input type="text" name="mac" id="mac">
+    </div>
+    <div class="form-group">
+      <label for="tair">TAIR</label>
+      <input type="text" name="tair" id="tair">
+    </div>
+    <div class="form-group">
+      <label for="asset">ASSET</label>
+      <input type="text" name="asset" id="asset">
+    </div>
+    <div class="form-group">
+      <label for="cois">COI</label>
+      <input type="text" name="cois" id="cois">
+    </div>
+    <div class="form-group">
+        <label for="school1">School 1</label>
+        <input type="text" name="school1" id="school1">
+      </div>
+    <div class="form-group">
+        <label for="school2">School 2</label>
+        <input type="text" name="school2" id="school2">
+      </div>
+    <div class="form-group">
+        <label for="school3">School 3</label>
+        <input type="text" name="school3" id="school3">
+      </div>
+    <div class="form-group">
+        <label for="school4">School 4</label>
+        <input type="text" name="school4" id="school4">
+      </div> 
+    <div class="form-group">
+        <label for="school5">School 5</label>
+        <input type="text" name="school5" id="school5">
+      </div> 
+    <div class="form-group">
+        <label for="school6">School 6</label>
+        <input type="text" name="school6" id="school6">
+      </div>
+    <div class="form-group">
+        <label for="school7">School 7</label>
+        <input type="text" name="school7" id="school7">
+      </div>
+    <div class="form-group">
+        <label for="school8">School 8</label>
+        <input type="text" name="school8" id="school8">
+      </div>
+    <div class="form-group">
+        <label for="school9">School 9</label>
+        <input type="text" name="school9" id="school9">
+      </div>
+    <div class="form-group">
+        <label for="school10">School 10</label>
+        <input type="text" name="school10" id="school10">
+      </div>
+    <div class="form-group">
+      <label for="personell">Personnel</label>
+      <input type="text" name="personell" id="personell">
+    </div>
+    <div class="form-group">
+      <label for="uniforms">Uniform</label>
+      <input type="text" name="uniforms" id="uniforms">
+    </div>
+    <div class="form-group">
+      <label for="hotel1">Hotel</label>
+      <input type="text" name="hotel1" id="hotel1">
+    </div>
+    <div class="form-group">
+        <label for="hotel2">Hotel</label>
+        <input type="text" name="hotel2" id="hotel2">
+      </div>
+    <div class="form-group">
+        <label for="hotel3">Hotel</label>
+        <input type="text" name="hotel3" id="hotel3">
+      </div>
+    <div class="form-group">
+        <label for="hotel4">Hotel</label>
+        <input type="text" name="hotel4" id="hotel4">
+      </div>
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes"></textarea>
+    </div>
+    <button type="submit">Generate PDF</button>
+  </form>
+</body>
+</html>
