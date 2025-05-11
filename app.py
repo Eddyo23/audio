@@ -67,6 +67,8 @@ def generate_tour_pdf():
 
     for page in writer.pages:
         writer.update_page_form_field_values(page, {
+            "event_name": form_data.get("event_name", ""),
+            "event_namepg2": form_data.get("event_namepg2", ""),
             "activity_description": form_data.get("activity_description", ""),
             "who": form_data.get("who", ""),
             "what": form_data.get("what", ""),
@@ -91,7 +93,6 @@ def generate_tour_pdf():
             "school8": form_data.get("school8", ""),
             "school9": form_data.get("school9", ""),
             "school10": form_data.get("school10", ""),
-            "tour_name": form_data.get("tour_name", ""),
             "personell": form_data.get("personell", ""),
             "uniforms": form_data.get("uniforms", ""),
             "hotel1": form_data.get("hotel1", ""),
