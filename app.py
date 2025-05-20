@@ -106,6 +106,19 @@ def generate_tour_pdf():
     output.seek(0)
     return send_file(output, download_name="filled_template.pdf", as_attachment=True)
 
+# AMPA Forms
+@app.route('/ampa-forms')
+def ampa():
+    return render_template('ampa-forms.html')
+
+@app.route('/download/9E-trombone')
+def download_trombone_pdf():
+    return send_file("9E-trombone.pdf", as_attachment=True)
+
+@app.route('/download/9C-euphonium')
+def download_euphonium_pdf():
+    return send_file("9C-euphonium.pdf", as_attachment=True)
+
 
 # After Action Review form
 @app.route('/usarec-aar')
@@ -178,3 +191,4 @@ def generate_aar_pdf():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
+
