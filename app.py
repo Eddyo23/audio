@@ -119,6 +119,62 @@ def download_trombone_pdf():
 def download_euphonium_pdf():
     return send_file("9C-euphonium.pdf", as_attachment=True)
 
+@app.route('/download/9B-trumpet')
+def download_trumpet_pdf():
+    return send_file("9B-trumpet.pdf", as_attachment=True)
+
+@app.route('/download/9D-french horn')
+def download_french_horn_pdf():
+    return send_file("9D-french horn.pdf", as_attachment=True)
+
+@app.route('/download/9F-tuba')
+def download_tuba_pdf():
+    return send_file("9F-tuba.pdf", as_attachment=True)
+
+@app.route('/download/9G-flute')
+def download_flute_pdf():
+    return send_file("9G-flute.pdf", as_attachment=True)
+
+@app.route('/download/9H-oboe')
+def download_oboe_pdf():
+    return send_file("9H-oboe.pdf", as_attachment=True)
+
+@app.route('/download/9J-clarinet')
+def download_clarinet_pdf():
+    return send_file("9J-clarinet.pdf", as_attachment=True)
+
+@app.route('/download/9K-bassoon')
+def download_bassoon_pdf():
+    return send_file("9K-bassoon.pdf", as_attachment=True)
+
+@app.route('/download/9L-saxophone')
+def download_saxophone_pdf():
+    return send_file("9L-saxophone.pdf", as_attachment=True)
+
+@app.route('/download/9M-percussion')
+def download_percussion_pdf():
+    return send_file("9M-percussion.pdf", as_attachment=True)
+
+@app.route('/download/9N-keyboard')
+def download_keyboard_pdf():
+    return send_file("9N-keyboard.pdf", as_attachment=True)
+
+@app.route('/download/9T-guitar')
+def download_guitar_pdf():
+    return send_file("9T-guitar.pdf", as_attachment=True)
+
+@app.route('/download/9U-electric bass')
+def download_electric_bass_pdf():
+    return send_file("9U-electric bass.pdf", as_attachment=True)
+
+@app.route('/download/9V-vocalist')
+def download_vocalist_pdf():
+    return send_file("9V-vocalist.pdf", as_attachment=True)
+
+@app.route('/download/9X-music support technician')
+def download_music_support_technician_pdf():
+    return send_file("9X-music support technician.pdf", as_attachment=True)
+
 
 # After Action Review form
 @app.route('/usarec-aar')
