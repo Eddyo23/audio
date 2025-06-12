@@ -10,6 +10,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+
+
+
+
 # Convention form
 @app.route('/convention')
 def convention():
@@ -50,6 +54,10 @@ def generate_pdf():
     writer.write(output)
     output.seek(0)
     return send_file(output, download_name="filled_template.pdf", as_attachment=True)
+
+
+
+
 
 # Tour CONOP
 @app.route('/tourconop')
@@ -105,6 +113,51 @@ def generate_tour_pdf():
     writer.write(output)
     output.seek(0)
     return send_file(output, download_name="filled_template.pdf", as_attachment=True)
+
+
+
+
+# Audition Tour
+@app.route('/auditiontour')
+def auditiontour():
+    return render_template('auditiontour.html')
+
+@app.route('/generate-auditiontour', methods=['POST'])
+def auditiontourtemplate_pdf():
+    form_data = request.form
+    reader = PdfReader("auditiontourtemplate.pdf")
+    writer = PdfWriter()
+
+    for page in reader.pages:
+        writer.add_page(page)
+
+    for page in writer.pages:
+        writer.update_page_form_field_values(page, {
+            "event_name": form_data.get("event_name", ""),
+        
+            "activity_description": form_data.get("activity_description", ""),
+            "who": form_data.get("who", ""),
+            "what": form_data.get("what", ""),
+            "when": form_data.get("when", ""),
+            "where": form_data.get("where", ""),
+            "poc": form_data.get("poc", ""),
+            "vehicle": form_data.get("vehicle", ""),
+            
+            
+            
+            "impressions": form_data.get("impressions", ""),
+            "engagement": form_data.get("engagements", ""),
+            "leads": form_data.get("leads", ""),
+            
+    
+        })
+
+    output = io.BytesIO()
+    writer.write(output)
+    output.seek(0)
+    return send_file(output, download_name="auditiontourtemplate.pdf", as_attachment=True)
+
+
 
 # AMPA Forms
 @app.route('/ampa-forms')
@@ -174,6 +227,136 @@ def download_vocalist_pdf():
 @app.route('/download/9X-music support technician')
 def download_music_support_technician_pdf():
     return send_file("9X-music support technician.pdf", as_attachment=True)
+
+
+
+
+
+# QPM Packets Routes
+
+@app.route('/qpm-packets')
+def qpm_packets():
+    return render_template('QPM-Packets.html')
+
+@app.route('/download/qpm/9b_trumpet_1')
+def download_9b_trumpet_1():
+    return send_file('QPM Packets/9B Trumpet QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9b_trumpet_2')
+def download_9b_trumpet_2():
+    return send_file('QPM Packets/9B Trumpet QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9c_euphonium_1')
+def download_9c_euphonium_1():
+    return send_file('QPM Packets/9C Euphonium QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9c_euphonium_2')
+def download_9c_euphonium_2():
+    return send_file('QPM Packets/9C Euphonium QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9d_horn_1')
+def download_9d_horn_1():
+    return send_file('QPM Packets/9D Horn QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9d_horn_2')
+def download_9d_horn_2():
+    return send_file('QPM Packets/9D Horn QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9e_bass_trombone_1')
+def download_9e_bass_trombone_1():
+    return send_file('QPM Packets/9E Bass Trombone QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9e_tenor_trombone_2')
+def download_9e_tenor_trombone_2():
+    return send_file('QPM Packets/9E Tenor Trombone QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9f_tuba_1')
+def download_9f_tuba_1():
+    return send_file('QPM Packets/9F Tuba QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9f_tuba_2')
+def download_9f_tuba_2():
+    return send_file('QPM Packets/9F Tuba QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9g_flute_1')
+def download_9g_flute_1():
+    return send_file('QPM Packets/9G Flute QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9g_flute_2')
+def download_9g_flute_2():
+    return send_file('QPM Packets/9G Flute QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9h_oboe_1')
+def download_9h_oboe_1():
+    return send_file('QPM Packets/9H Oboe QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9h_oboe_2')
+def download_9h_oboe_2():
+    return send_file('QPM Packets/9H Oboe QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9j_clarinet_1')
+def download_9j_clarinet_1():
+    return send_file('QPM Packets/9J Clarinet QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9j_clarinet_2')
+def download_9j_clarinet_2():
+    return send_file('QPM Packets/9J Clarinet QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9k_bassoon_1')
+def download_9k_bassoon_1():
+    return send_file('QPM Packets/9K Bassoon QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9k_bassoon_2')
+def download_9k_bassoon_2():
+    return send_file('QPM Packets/9K Bassoon QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9l_saxophone_1')
+def download_9l_saxophone_1():
+    return send_file('QPM Packets/9L Saxophone QPM 1 (2).pdf', as_attachment=True)
+
+@app.route('/download/qpm/9l_saxophone_2')
+def download_9l_saxophone_2():
+    return send_file('QPM Packets/9L Saxophone QPM 2 (1).pdf', as_attachment=True)
+
+@app.route('/download/qpm/9m_percussion_1')
+def download_9m_percussion_1():
+    return send_file('QPM Packets/9M Percussion QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9m_percussion_2')
+def download_9m_percussion_2():
+    return send_file('QPM Packets/9M Percussion QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9n_keyboard_1')
+def download_9n_keyboard_1():
+    return send_file('QPM Packets/9N Keyboard QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9n_keyboard_2')
+def download_9n_keyboard_2():
+    return send_file('QPM Packets/9N Keyboard QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9t_guitar_1')
+def download_9t_guitar_1():
+    return send_file('QPM Packets/9T Guitar QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9u_bass_1')
+def download_9u_bass_1():
+    return send_file('QPM Packets/9U Bass QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9u_bass_2')
+def download_9u_bass_2():
+    return send_file('QPM Packets/9U Bass QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9v_female_1')
+def download_9v_female_1():
+    return send_file('QPM Packets/9V Female QPM 1.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9v_female_2')
+def download_9v_female_2():
+    return send_file('QPM Packets/9V Female QPM 2.pdf', as_attachment=True)
+
+@app.route('/download/qpm/9v_male_1')
+def download_9v_male_1():
+    return send_file('QPM Packets/9V Male QPM 1.pdf', as_attachment=True)
 
 
 # After Action Review form
